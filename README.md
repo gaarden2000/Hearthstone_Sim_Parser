@@ -12,11 +12,15 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 
+## To-do list of things to do
+* Add all necessary variables beforehand
+* Make the parser work with one file
+  * Make the parser work with any file of a proper format
+* Make the simulator with relative intuity
 
-
-TODO: 
-
-https://github.com/othneildrew/Best-README-Template/blob/master/BLANK_README.md
+## To-do list of other things to do 
+* Fix and update Readme formatting: See the repo for ["Best README Template"](https://github.com/othneildrew/Best-README-Template/blob/master/BLANK_README.md)
+* Include format of input and output file 
 
 
 
