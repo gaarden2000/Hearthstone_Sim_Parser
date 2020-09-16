@@ -25,7 +25,13 @@
 
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
-* 
+* [Getting Started](#getting-started)
+* [Usage](#usage)
+* [To-do list of things to do](#to-do-list-of-things-to-do)
+* [To-do list of other things to do](#to-do-list-of-other-things-to-do)
+* [Contributing](#contributing)
+* [License](#license)
+* [Contact](#contact)
 
 
 ## About the Project
