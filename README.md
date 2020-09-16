@@ -12,6 +12,15 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 
+<p align="center">
+  <h3 align="center">Hearthstone pack opening simulator</h3>
+
+  <p align="center">
+    The last simulator you will ever need for data purposes (until they decide to change something)
+    <br />
+ </p>
+</p>
+
 ## To-do list of things to do
 * Add all necessary variables beforehand
 * Make the parser work with one file
