@@ -32,6 +32,7 @@
 * [Contributing](#contributing)
 * [License](#license)
 * [Contact](#contact)
+* [Acknowledgements](#acknowledgements)
 
 
 ## About the Project
@@ -50,7 +51,7 @@ Coming soon
 
 
 ## To-do list of things to do
-* Add all necessary variables beforehand
+* Add all necessary variables
 * Make the parser work with one file
   * Make the parser work with any file of a proper format
 * Make the simulator with relative intuity
@@ -81,6 +82,10 @@ Distributed under the MIT License. See `LICENSE` for more information.
 Sander Gaarden - @TheGaardenator#2000 on Discord - sandergaarden@gmail.com
 
 Project Link: [https://github.com/gaarden2000/Hearthstone_Sim_Parser](https://github.com/gaarden2000/Hearthstone_Sim_Parser)
+
+
+## Acknowledgements
+* [Othneil Drew and the best README template](https://github.com/othneildrew/Best-README-Template)
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
