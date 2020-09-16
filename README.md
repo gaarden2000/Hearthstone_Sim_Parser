@@ -21,6 +21,28 @@
  </p>
 </p>
 
+## Table of Contents
+
+* [About the Project](#about-the-project)
+  * [Built With](#built-with)
+* 
+
+
+## About the Project
+Something something parser and data collection
+
+### Built With
+* C# (In Visual Studio 2019)
+
+
+## Getting Started
+Coming soon
+
+
+## Usage
+Coming soon
+
+
 ## To-do list of things to do
 * Add all necessary variables beforehand
 * Make the parser work with one file
@@ -32,6 +54,27 @@
 * Include format of input and output file 
 
 
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+
+## Contact
+
+Sander Gaarden - @TheGaardenator#2000 on Discord - sandergaarden@gmail.com
+
+Project Link: [https://github.com/gaarden2000/Hearthstone_Sim_Parser](https://github.com/gaarden2000/Hearthstone_Sim_Parser)
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
@@ -46,4 +89,3 @@
 [issues-url]: https://github.com/gaarden2000/Hearthstone_Sim_Parser/issues
 [license-shield]: https://img.shields.io/github/license/gaarden2000/Hearthstone_Sim_Parser.svg?style=flat-square
 [license-url]: https://github.com/gaarden2000/Hearthstone_Sim_Parser/blob/master/LICENSE.txt
-[product-screenshot]: images/screenshot.png
