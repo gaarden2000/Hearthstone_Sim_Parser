@@ -51,9 +51,8 @@ Coming soon
 
 
 ## To-do list of things to do
-* Add all necessary variables
-* Make the parser work with one file
-  * Make the parser work with any file of a proper format
+* Make the parser work with one file/set
+  * Make the parser work with any file/set of a proper format
 * Make the simulator with relative intuity
 
 ## To-do list of other things to do 
