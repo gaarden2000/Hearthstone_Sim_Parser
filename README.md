@@ -94,4 +94,4 @@ Project Link: [https://github.com/gaarden2000/Hearthstone_Sim_Parser](https://gi
 [issues-shield]: https://img.shields.io/github/issues/gaarden2000/Hearthstone_Sim_Parser.svg?style=flat-square
 [issues-url]: https://github.com/gaarden2000/Hearthstone_Sim_Parser/issues
 [license-shield]: https://img.shields.io/github/license/gaarden2000/Hearthstone_Sim_Parser.svg?style=flat-square
-[license-url]: https://github.com/gaarden2000/Hearthstone_Sim_Parser/LICENSE.md
+[license-url]: https://github.com/gaarden2000/Hearthstone_Sim_Parser/blob/master/LICENSE.md
