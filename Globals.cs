@@ -15,9 +15,9 @@ namespace Hearthstone_Sim_Parser
         // Random object used for packs
         public static Random rnd = new Random();
 
-        // File paths for reading and writing
+        // File paths for reading and writing. Will be removed eventually to allow custom paths
         public static string HSSetPath = "hearthstone.csv"; // File containing all cards from several sets
-        public static string HSCuratedPath = "classic.csv"; // File to write to, to contain all cards from the chosen set
+        public static string HSCuratedPath = "hearthstonecurated.csv"; // File to write to, to contain all cards from the chosen set
         public static string HSDataPath = "packs.csv"; // File to write to, to contain all the data gathered from the simulation
 
 
