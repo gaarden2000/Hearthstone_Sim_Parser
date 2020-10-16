@@ -16,7 +16,7 @@ namespace Hearthstone_Sim_Parser
         public static string[] ReadFromCSV(string set, string path)
         {
             int lineAmount = FindLineAmount(set, path); // Function finds the amount of lines necessary in the array
-            Console.WriteLine("Amount of lines found for writing found: " + lineAmount);
+            Console.WriteLine("Amount of lines to write found: " + lineAmount);
 
             string[] CSVArray = new string[lineAmount]; // Array meant for writing to a new file with the wanted set
 
@@ -34,8 +34,8 @@ namespace Hearthstone_Sim_Parser
          */
         public static int[] FindIndex(char x, string parsedString)
         {
-            int[] Indices = new int[11]; // Array to use
-            int lastPos = 0; 
+            int[] Indices = new int[11]; // Array to use. 11 entries from amount of commas in the string to read
+            int lastPos = 0; // Variable used to determine where to start from in the line
 
             // This for loop runs 11 times, once for each comma in the given line. lastPos is position of the comma from the previous run, and IndexOf goes from position "lastPos + 1" and forward until it finds char x
             for(int i = 0; i <= 10; i++)
