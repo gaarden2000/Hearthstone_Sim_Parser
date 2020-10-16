@@ -105,7 +105,7 @@ namespace Hearthstone_Sim_Parser
                     // This if statement is true if the following is true:
                     // The set read in the line is the same as the one given (set is the same as the set written in the line)
                     // The card is a collectible card (cardTrue is the same as the flag in the line)
-                    if (set.Equals(line.Substring(Indices[1] + 1, 7)) && cardTrue.Equals(line.Substring(Indices[10] + 1, 4)))
+                    if (set.Equals(line.Substring(Indices[1] + 1, Indices[2] - Indices[1] - 1)) && cardTrue.Equals(line.Substring(Indices[10] + 1)))
                     {
                         Console.Write(line); // Written for clarity purposes
                         CSVArray[arrayIndex] = line; // Line is added to the array

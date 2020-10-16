@@ -28,7 +28,6 @@
 * [Getting Started](#getting-started)
 * [Usage](#usage)
 * [To-do list of things to do](#to-do-list-of-things-to-do)
-* [To-do list of other things to do](#to-do-list-of-other-things-to-do)
 * [Contributing](#contributing)
 * [License](#license)
 * [Contact](#contact)
@@ -51,9 +50,7 @@ Coming soon
 
 
 ## To-do list of things to do
-* Make the parser work with one file/set
-  * Make the parser work with any file/set of a proper format
-* Make the simulator with relative intuity
+For the Trello to the coding project, look [here](https://trello.com/b/WNxnxGWr/hearthstone-data-sim-and-parser).
 
 ## To-do list of other things to do 
 * Fix and update Readme formatting: See the repo for ["Best README Template"](https://github.com/othneildrew/Best-README-Template/blob/master/BLANK_README.md)
