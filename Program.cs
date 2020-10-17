@@ -25,8 +25,8 @@ namespace Hearthstone_Sim_Parser
                 // Switch case based on written command
                 switch (command)
                 {
-                    case "curate": // Curate case, to test the parser.
-                        Console.WriteLine("Which set do you wish to curate?");
+                    case "findset": // Curate case, to test the parser.
+                        Console.WriteLine("Which set do you wish to use?");
 
                         string set = Console.ReadLine(); // Set given by user
 
@@ -43,16 +43,37 @@ namespace Hearthstone_Sim_Parser
                             Console.WriteLine("Total amount of lines found: " + arraySize);
                         }
 
-                        Globals.WriteToCSV(CSVArray, Globals.HSCuratedPath); // The array is written to the file
+                        Console.WriteLine("What do you wish to do with the set?");
+                        command = Console.ReadLine();
 
-                        Console.WriteLine("Write complete. Press any key to exit.");
-                        Console.ReadKey();
+                        if (command.Equals("curate"))
+                        {
+                            Globals.WriteToCSV(CSVArray, Globals.HSCuratedPath); // The array is written to the file
+
+                            Console.WriteLine("Write complete. Press any key to exit.");
+                            Console.ReadKey();
+                        }
+                        else if (command.Equals("simulate"))
+                        {
+                            // TODO
+                            // Write simulation here
+                        }
+                        else
+                        {
+                            Console.WriteLine("Command not recognised. Command will not continue.");
+                            break;
+                        }
+                        
 
                         run = false;
                         break;
 
                     case "exit": // exit case
                         run = false;
+                        break;
+
+                    default:
+                        Console.WriteLine("Command not recognized.");
                         break;
                 }
 
