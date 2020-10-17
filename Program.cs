@@ -17,20 +17,22 @@ namespace Hearthstone_Sim_Parser
              */
             while (run)
             {
-                
+
                 Console.Write("Command: ");
                 string command = Console.ReadLine().ToLower(); // Command is read and turned to lower case
 
                 // Switch case based on written command
                 switch (command)
                 {
-                    case "curate":
+                    /*case "curate":
                         Console.WriteLine("Which set do you wish to curate?");
                         // TODO
                         // Write specific names for each set
+                        
                         string set = Console.ReadLine(); // Write which set to curate
 
                         // CSVArray is given from the parser, then written to the curated path
+                        
                         string[] CSVArray = Parser.ReadFromCSV(set, Globals.HSSetPath);
                         Globals.WriteToCSV(Globals.HSCuratedPath, CSVArray);
                         
@@ -38,6 +40,20 @@ namespace Hearthstone_Sim_Parser
                         Console.ReadKey();
 
                         run = false; // breaks the while loop and makes the program exit
+                        break;*/
+
+                    case "curate2":
+                        Console.WriteLine("Which set do you wish to curate?");
+
+                        string set = Console.ReadLine();
+
+                        string[] CSVArray = Parser.ReadFromCSV2(set, Globals.HSSetPath);
+                        Globals.WriteToCSV(Globals.HSCuratedPath, CSVArray);
+
+                        Console.WriteLine("Write complete. Press any key to exit.");
+                        Console.ReadKey();
+
+                        run = false;
                         break;
 
                 }

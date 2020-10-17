@@ -15,38 +15,15 @@ namespace Hearthstone_Sim_Parser
          */
         public static string[] ReadFromCSV(string set, string path)
         {
-            int lineAmount = FindLineAmount(set, path); // Function finds the amount of lines necessary in the array
-            Console.WriteLine("Amount of lines to write found: " + lineAmount);
+            int lineAmount = FindLineAmount(set, path); // lineAmount determines how many lines is necessary to have in the array, aka amount of cards in the given set
+            Console.WriteLine("Amount of lines to write found: " + lineAmount); // Written for clarity purposes
+            
+            string[] CSVArray = new string[lineAmount]; // array is initialised based on amount of lines found
 
-            string[] CSVArray = new string[lineAmount]; // Array meant for writing to a new file with the wanted set
-
-            CSVArray = PopulateCSVArray(CSVArray, set, path);
+            CSVArray = PopulateCSVArray(CSVArray, set, path); // array is populated
 
             return CSVArray;
         }
-
-
-        /*
-         * Function: FindIndex
-         * Input: The character to find the index of, the string to find the characters in
-         * Output: An array of indices for a given character
-         * Remarks: This function is usually used for commas exclusively, and is necessary to finding out where the comparable pieces of writing lies
-         */
-        public static int[] FindIndex(char x, string parsedString)
-        {
-            int[] Indices = new int[11]; // Array to use. 11 entries from amount of commas in the string to read
-            int lastPos = 0; // Variable used to determine where to start from in the line
-
-            // This for loop runs 11 times, once for each comma in the given line. lastPos is position of the comma from the previous run, and IndexOf goes from position "lastPos + 1" and forward until it finds char x
-            for(int i = 0; i <= 10; i++)
-            {
-                lastPos = parsedString.IndexOf(x, lastPos + 1);
-                Indices[i] = lastPos;
-            }
-
-            return Indices;
-        }
-
 
         /*
          * Function: FindLineAmount
@@ -63,14 +40,12 @@ namespace Hearthstone_Sim_Parser
                 string line; // String variable used to store the read line
                 string cardTrue = "True"; // String to check for collectible flag of the card
 
-                while((line = sr.ReadLine()) != null) // Readline() goes to the next line of the file after being called. While loop breaks when ReadLine() returns null
+                while ((line = sr.ReadLine()) != null) // Readline() goes to the next line of the file after being called. While loop breaks when ReadLine() returns null
                 {
-                    int[] Indices = FindIndex(',', line); // Array of indices of commas of the given line
-
                     // This if statement is true if the following is true:
-                    // The set read in the line is the same as the one given (set is the same as the set written in the line)
-                    // The card is a collectible card (cardTrue is the same as the flag in the line)
-                    if (set.Equals(line.Substring(Indices[1] + 1, 7)) && cardTrue.Equals(line.Substring(Indices[10] + 1, 4)))
+                    // The card is from the right set (line contains set)
+                    // The card is a collectible card (line contains cardTrue = "True")
+                    if (line.Contains(set) && line.Contains(cardTrue))
                     {
                         lineAmount++;
                     }
@@ -80,7 +55,6 @@ namespace Hearthstone_Sim_Parser
             return lineAmount;
         }
 
-        
         /*
          * Function: PopulateCSVArray
          * Input: The string array to write to, the set (as string) that is looked for in the file, the path (as string) to the file
@@ -98,14 +72,12 @@ namespace Hearthstone_Sim_Parser
                 string line; // String variable used to store the read line
                 string cardTrue = "True"; // String to check for collectible flag of the card
 
-                while((line = sr.ReadLine()) != null) // Readline() goes to the next line of the file after being called. While loop breaks when ReadLine() returns null
+                while ((line = sr.ReadLine()) != null) // Readline() goes to the next line of the file after being called. While loop breaks when ReadLine() returns null
                 {
-                    int[] Indices = FindIndex(',', line);
-
                     // This if statement is true if the following is true:
-                    // The set read in the line is the same as the one given (set is the same as the set written in the line)
-                    // The card is a collectible card (cardTrue is the same as the flag in the line)
-                    if (set.Equals(line.Substring(Indices[1] + 1, Indices[2] - Indices[1] - 1)) && cardTrue.Equals(line.Substring(Indices[10] + 1)))
+                    // The card is from the right set (line contains set)
+                    // The card is a collectible card (line contains cardTrue = "True")
+                    if (line.Contains(set) && line.Contains(cardTrue))
                     {
                         Console.Write(line); // Written for clarity purposes
                         CSVArray[arrayIndex] = line; // Line is added to the array
