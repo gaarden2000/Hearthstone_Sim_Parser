@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Hearthstone_Sim_Parser
 {
@@ -24,12 +25,25 @@ namespace Hearthstone_Sim_Parser
                 // Switch case based on written command
                 switch (command)
                 {
+                    // Curate case, to test the parser.
                     case "curate":
                         Console.WriteLine("Which set do you wish to curate?");
 
                         string set = Console.ReadLine();
 
                         string[] CSVArray = Parser.ReadFromCSV(set, Globals.HSSetPath);
+
+                        int arraySize = CSVArray.Count();
+                        if(arraySize == 1)
+                        {
+                            Console.WriteLine("Error! Counted lines is only 1. Command will not continue.");
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Total amount of lines found: " + arraySize);
+                        }
+
                         Globals.WriteToCSV(Globals.HSCuratedPath, CSVArray);
 
                         Console.WriteLine("Write complete. Press any key to exit.");
@@ -38,6 +52,9 @@ namespace Hearthstone_Sim_Parser
                         run = false;
                         break;
 
+                    case "exit":
+                        run = false;
+                        break;
                 }
 
                 
