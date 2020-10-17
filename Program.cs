@@ -25,26 +25,25 @@ namespace Hearthstone_Sim_Parser
                 // Switch case based on written command
                 switch (command)
                 {
-                    // Curate case, to test the parser.
-                    case "curate":
+                    case "curate": // Curate case, to test the parser.
                         Console.WriteLine("Which set do you wish to curate?");
 
-                        string set = Console.ReadLine();
+                        string set = Console.ReadLine(); // Set given by user
 
-                        string[] CSVArray = Parser.ReadFromCSV(set, Globals.HSSetPath);
+                        string[] CSVArray = Parser.ReadFromCSV(set, Globals.HSSetPath); // Returns an array based on the hearthstone.csv file, based on the set written
 
-                        int arraySize = CSVArray.Count();
-                        if(arraySize == 1)
+                        int arraySize = CSVArray.Count(); // array size is counted
+                        if(arraySize == 1) // This should only occur if the set written is wrong, meaning the array only includes the header
                         {
                             Console.WriteLine("Error! Counted lines is only 1. Command will not continue.");
-                            break;
+                            break; // This breaks out of the switch case
                         }
                         else
                         {
                             Console.WriteLine("Total amount of lines found: " + arraySize);
                         }
 
-                        Globals.WriteToCSV(Globals.HSCuratedPath, CSVArray);
+                        Globals.WriteToCSV(CSVArray, Globals.HSCuratedPath); // The array is written to the file
 
                         Console.WriteLine("Write complete. Press any key to exit.");
                         Console.ReadKey();
@@ -52,7 +51,7 @@ namespace Hearthstone_Sim_Parser
                         run = false;
                         break;
 
-                    case "exit":
+                    case "exit": // exit case
                         run = false;
                         break;
                 }

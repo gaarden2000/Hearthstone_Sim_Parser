@@ -27,7 +27,7 @@ namespace Hearthstone_Sim_Parser
          * Output: CSV file exported at given file path
          * Remarks: Uses File from System.IO in order to write. Is written in Globals as it is to be used by multiple functions
          */
-        public static void WriteToCSV(string path, string[] CSVArray)
+        public static void WriteToCSV(string[] CSVArray, string path)
         {
             File.WriteAllLines(path, CSVArray); // Syntax is File.WriteAllLines(path, thing to print)
         }
