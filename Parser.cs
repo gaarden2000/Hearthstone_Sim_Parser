@@ -16,7 +16,6 @@ namespace Hearthstone_Sim_Parser
         public static string[] ReadFromCSV(string set, string path)
         {
             int lineAmount = FindLineAmount(set, path); // lineAmount determines how many lines is necessary to have in the array, aka amount of cards in the given set
-            Console.WriteLine("Amount of lines to write found: " + lineAmount); // Written for clarity purposes
             
             string[] CSVArray = new string[lineAmount]; // array is initialised based on amount of lines found
 
