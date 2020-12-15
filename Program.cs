@@ -57,6 +57,22 @@ namespace Hearthstone_Sim_Parser
                         {
                             // TODO
                             // Write simulation here
+
+                            // Create object based on:
+                            /// Previously curated stuff
+                            /// Cardroller (uses checklist and also makes the lines as previous roller)
+                            /// Present info
+                            /// Save info
+
+                            Checklist checklist = new Checklist(CSVArray);
+
+                            Console.WriteLine("Array sizes: ");
+                            Console.WriteLine("Common: " + checklist.commonArray.Length);
+                            Console.WriteLine("Rare: " + checklist.rareArray.Length);
+                            Console.WriteLine("Epic: " + checklist.epicArray.Length);
+                            Console.WriteLine("Legendary: " + checklist.legendaryArray.Length);
+
+                            Console.ReadKey();
                         }
                         else
                         {
