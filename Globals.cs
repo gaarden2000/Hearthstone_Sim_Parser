@@ -2,6 +2,7 @@
 using System.IO;
 using System.Collections.Generic;
 using System.Text;
+using System.Net.NetworkInformation;
 
 namespace Hearthstone_Sim_Parser
 {
@@ -20,6 +21,41 @@ namespace Hearthstone_Sim_Parser
         public static string HSCuratedPath = "hearthstonecurated.csv"; // File to write to, to contain all cards from the chosen set
         public static string HSDataPath = "packs.csv"; // File to write to, to contain all the data gathered from the simulation
 
+        /*
+         * Function: PromptConfirmation
+         * Input: String of the question to give in the console
+         * Output: True or false response
+         * Remarks: y is yes, n is no
+         */
+        public static bool PromptConfirmation(string question)
+        {
+            bool confirmed = false;
+            bool response = false;
+
+            Console.WriteLine(question);
+
+            while (confirmed != true)
+            {
+                ConsoleKeyInfo cki = Console.ReadKey();
+                Console.WriteLine();
+                if (cki.Key.ToString().ToLower().Equals("y"))
+                {
+                    response = true;
+                    confirmed = true;
+                }
+                else if (cki.Key.ToString().ToLower().Equals("n"))
+                {
+                    response = false;
+                    confirmed = true;
+                }
+                else
+                {
+                    Console.WriteLine("Answer undefined.");
+                }
+            }
+
+            return response;
+        }
 
         /*
          * Function: WriteToCSV
@@ -31,5 +67,8 @@ namespace Hearthstone_Sim_Parser
         {
             File.WriteAllLines(path, CSVArray); // Syntax is File.WriteAllLines(path, thing to print)
         }
+
+
+
     }
 }
