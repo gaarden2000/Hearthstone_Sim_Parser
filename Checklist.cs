@@ -7,11 +7,18 @@ namespace Hearthstone_Sim_Parser
     public class Checklist
     {
      
+        // Amount of cards necessary to checklist for each rarity
+        public int commonChecklistSize { get; set; }
+        public int rareChecklistSize { get; set; }
+        public int epicChecklistSize { get; set; }
+        public int legendaryChecklistSize { get; set; }
+
+
         // Array names for class
-        public int[] commonArray { get; set; }
-        public int[] rareArray { get; set; }
-        public int[] epicArray { get; set; }
-        public int[] legendaryArray { get; set; }
+        public int[] commonChecklist { get; set; }
+        public int[] rareChecklist { get; set; }
+        public int[] epicChecklist { get; set; }
+        public int[] legendaryChecklist { get; set; }
 
 
         public Checklist(string[] CSVArray)
@@ -21,10 +28,15 @@ namespace Hearthstone_Sim_Parser
 
             int[] arraySizes = FindArraySizes(CSVArray);
 
-            commonArray = new int[arraySizes[0]];
-            rareArray = new int[arraySizes[1]];
-            epicArray = new int[arraySizes[2]];
-            legendaryArray = new int[arraySizes[3]];
+            commonChecklistSize = arraySizes[0];
+            rareChecklistSize = arraySizes[1];
+            epicChecklistSize = arraySizes[2];
+            legendaryChecklistSize = arraySizes[3];
+
+            commonChecklist = new int[commonChecklistSize];
+            rareChecklist = new int[rareChecklistSize];
+            epicChecklist = new int[epicChecklistSize];
+            legendaryChecklist = new int[legendaryChecklistSize];
 
         }
 
