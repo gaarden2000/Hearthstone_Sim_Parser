@@ -10,20 +10,37 @@ namespace Hearthstone_Sim_Parser
      */
     public class CardPack
     {
-        // TODO
-        /// The roller
-        /// / Rarity roller
-        /// // Make one guaranteed rare or better? Maybe a flag "hasGainedLegendary"
-        /// / ID roller
-
-
+        // TODO: Make things in constructor variables out here?
 
         public CardPack(Checklist checklist)
         {
+            // A list is made to easily check through
+            List<Card> cardList = new List<Card>();
+
             Card card1 = new Card(RarityRoller());
             card1.id = IdRoller(card1.rarity, checklist);
+            cardList.Add(card1);
 
+            Card card2 = new Card(RarityRoller());
+            card2.id = IdRoller(card1.rarity, checklist);
+            cardList.Add(card2);
 
+            Card card3 = new Card(RarityRoller());
+            card3.id = IdRoller(card1.rarity, checklist);
+            cardList.Add(card3);
+
+            Card card4 = new Card(RarityRoller());
+            card4.id = IdRoller(card1.rarity, checklist);
+            cardList.Add(card4);
+
+            // TODO: Figure out how this needs to work
+            /*foreach(Card card in cardList)
+            {
+                if (card.isNotCommon)
+                {
+                    break;
+                }
+            }*/
 
         }
 
@@ -35,12 +52,27 @@ namespace Hearthstone_Sim_Parser
          */
         public string RarityRoller()
         {
-            string rarity;
+            string rarity = "";
 
-            int rarityRoll = Globals.rnd.Next(0, 101);
+            int rarityRoll = Globals.rnd.Next(0, 101); // Next is inclusive lower bounds, exclusive upper bounds
 
-
-
+            // TODO: Figure out where the hell these numbers came from
+            if (rarityRoll <= 72)
+            {
+                rarity = "common";
+            }
+            else if (rarityRoll > 72 && rarityRoll <= 95)
+            {
+                rarity = "rare";
+            }
+            else if (rarityRoll > 95 && rarityRoll <= 99)
+            {
+                rarity = "epic";
+            }
+            else if (rarityRoll > 99)
+            {
+                rarity = "legendary";
+            }
 
             return rarity;
         }
@@ -53,7 +85,26 @@ namespace Hearthstone_Sim_Parser
          */
         public int IdRoller(string rarity, Checklist checklist)
         {
+            int id = 0;
 
+            if (rarity.Equals("common"))
+            {
+                id = Globals.rnd.Next(0, checklist.commonChecklistSize);
+            }
+            if (rarity.Equals("rare"))
+            {
+                id = Globals.rnd.Next(0, checklist.rareChecklistSize);
+            }
+            if (rarity.Equals("epic"))
+            {
+                id = Globals.rnd.Next(0, checklist.epicChecklistSize);
+            }
+            if (rarity.Equals("legendary"))
+            {
+                id = Globals.rnd.Next(0, checklist.legendaryChecklistSize);
+            }
+
+            return id;
         }
 
     }
