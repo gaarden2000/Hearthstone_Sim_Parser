@@ -72,7 +72,7 @@ namespace Hearthstone_Sim_Parser
                             Console.WriteLine("Epic: " + checklist.epicChecklistSize);
                             Console.WriteLine("Legendary: " + checklist.legendaryChecklistSize);
 
-                            if(Globals.PromptConfirmation("Are the amounts correct ? (y/n)"))
+                            if(Globals.PromptConfirmation("Are the amounts correct?"))
                             {
                                 Console.WriteLine("Moving on.");
                             }
