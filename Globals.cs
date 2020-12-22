@@ -29,26 +29,29 @@ namespace Hearthstone_Sim_Parser
          */
         public static bool PromptConfirmation(string question)
         {
+            // Two booleans used during this function
             bool confirmed = false;
             bool response = false;
 
-            Console.WriteLine(question);
+            // Write the question and the format wished
+            Console.Write(question);
+            Console.WriteLine(" (y/n)");
 
             while (confirmed != true)
             {
-                ConsoleKeyInfo cki = Console.ReadKey();
+                ConsoleKeyInfo cki = Console.ReadKey(); // Grabs the read key information
                 Console.WriteLine();
-                if (cki.Key.ToString().ToLower().Equals("y"))
+                if (cki.Key.ToString().ToLower().Equals("y")) // y is yes
                 {
                     response = true;
                     confirmed = true;
                 }
-                else if (cki.Key.ToString().ToLower().Equals("n"))
+                else if (cki.Key.ToString().ToLower().Equals("n")) // n is no
                 {
                     response = false;
                     confirmed = true;
                 }
-                else
+                else // If not yes or no, it loops until they are given
                 {
                     Console.WriteLine("Answer undefined.");
                 }
