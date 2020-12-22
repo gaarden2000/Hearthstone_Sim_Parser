@@ -40,7 +40,7 @@ namespace Hearthstone_Sim_Parser
                         }
                         else
                         {
-                            Console.WriteLine("Total amount of lines found: " + arraySize);
+                            Console.WriteLine("Total amount of cards found: " + (arraySize - 1)); // arraySize-1 is amount of cards minus the header line
                         }
 
                         Console.WriteLine("What do you wish to do with the set?");
@@ -67,11 +67,26 @@ namespace Hearthstone_Sim_Parser
                             Checklist checklist = new Checklist(CSVArray);
 
                             Console.WriteLine("Array sizes: ");
-                            Console.WriteLine("Common: " + checklist.commonArray.Length);
-                            Console.WriteLine("Rare: " + checklist.rareArray.Length);
-                            Console.WriteLine("Epic: " + checklist.epicArray.Length);
-                            Console.WriteLine("Legendary: " + checklist.legendaryArray.Length);
+                            Console.WriteLine("Common: " + checklist.commonChecklistSize);
+                            Console.WriteLine("Rare: " + checklist.rareChecklistSize);
+                            Console.WriteLine("Epic: " + checklist.epicChecklistSize);
+                            Console.WriteLine("Legendary: " + checklist.legendaryChecklistSize);
 
+                            if(Globals.PromptConfirmation("Are the amounts correct ? (y/n)"))
+                            {
+                                Console.WriteLine("Moving on.");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Exiting. Please check your card source file or set name for inconsistencies.");
+                                Environment.Exit(0);
+                            }
+                            
+
+                            Console.WriteLine("Writing to file.");
+                            Globals.WriteToCSV(CSVArray, Globals.HSCuratedPath); // The array is written to the file
+
+                            Console.WriteLine("Write complete. Press any key to exit.");
                             Console.ReadKey();
                         }
                         else
