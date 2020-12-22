@@ -7,6 +7,11 @@ namespace Hearthstone_Sim_Parser
 {
     public class Parser
     {
+        // TODO
+        /// Add the final parser
+
+
+
         /*
          * Function: ReadFromCSV
          * Input: Set to find, path of the file to read from

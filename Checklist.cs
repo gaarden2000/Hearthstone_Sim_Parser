@@ -6,7 +6,15 @@ namespace Hearthstone_Sim_Parser
 {
     public class Checklist
     {
-     
+        // TODO
+        /// Add variables for:
+        /// / Amount of packs opened
+        /// / Craft value
+        /// / Dust value
+        /// / Dust amount
+        /// / Dust reguired
+        
+        
         // Amount of cards necessary to checklist for each rarity
         public int commonChecklistSize { get; set; }
         public int rareChecklistSize { get; set; }
