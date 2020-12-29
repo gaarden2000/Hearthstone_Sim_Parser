@@ -22,25 +22,22 @@ namespace Hearthstone_Sim_Parser
             cardList.Add(card1);
 
             Card card2 = new Card(RarityRoller());
-            card2.id = IdRoller(card1.rarity, checklist);
+            card2.id = IdRoller(card2.rarity, checklist);
             cardList.Add(card2);
 
             Card card3 = new Card(RarityRoller());
-            card3.id = IdRoller(card1.rarity, checklist);
+            card3.id = IdRoller(card3.rarity, checklist);
             cardList.Add(card3);
 
             Card card4 = new Card(RarityRoller());
-            card4.id = IdRoller(card1.rarity, checklist);
+            card4.id = IdRoller(card4.rarity, checklist);
             cardList.Add(card4);
 
-            // TODO: Figure out how this needs to work
-            /*foreach(Card card in cardList)
+            // Basically, if not a single card previously is rare or better
+            if (card1.isNotCommon == false && card2.isNotCommon == false && card3.isNotCommon == false && card4.isNotCommon == false)
             {
-                if (card.isNotCommon)
-                {
-                    break;
-                }
-            }*/
+
+            }
 
         }
 
@@ -75,6 +72,11 @@ namespace Hearthstone_Sim_Parser
             }
 
             return rarity;
+        }
+
+        public string RarityRollerRigged()
+        {
+
         }
 
         /*
