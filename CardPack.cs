@@ -36,7 +36,15 @@ namespace Hearthstone_Sim_Parser
             // Basically, if not a single card previously is rare or better
             if (card1.isNotCommon == false && card2.isNotCommon == false && card3.isNotCommon == false && card4.isNotCommon == false)
             {
-
+                Card card5 = new Card(RarityRollerRigged());
+                card5.id = IdRoller(card5.rarity, checklist);
+                cardList.Add(card5);
+            }
+            else
+            {
+                Card card5 = new Card(RarityRoller());
+                card5.id = IdRoller(card5.rarity, checklist);
+                cardList.Add(card5);
             }
 
         }
