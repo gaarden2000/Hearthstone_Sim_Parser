@@ -54,6 +54,7 @@ namespace Hearthstone_Sim_Parser
             int rarityRoll = Globals.rnd.Next(0, 10001); // Next is inclusive lower bounds, exclusive upper bounds. Upper bound is to allow for a resolution of second decimal point
 
             // All numbers are from the original report working with several pack openings from Hearthsim
+            // The numbers are based on the pull rate of each rarity, including golden rarities
             if (rarityRoll <= 7036)
             {
                 rarity = "common";
