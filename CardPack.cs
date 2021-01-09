@@ -51,32 +51,83 @@ namespace Hearthstone_Sim_Parser
         {
             string rarity = "";
 
-            int rarityRoll = Globals.rnd.Next(0, 101); // Next is inclusive lower bounds, exclusive upper bounds
+            int rarityRoll = Globals.rnd.Next(0, 10001); // Next is inclusive lower bounds, exclusive upper bounds. Upper bound is to allow for a resolution of second decimal point
 
-            // TODO: Figure out where the hell these numbers came from
-            if (rarityRoll <= 72)
+            // All numbers are from the original report working with several pack openings from Hearthsim
+            if (rarityRoll <= 7036)
             {
                 rarity = "common";
             }
-            else if (rarityRoll > 72 && rarityRoll <= 95)
+            else if (rarityRoll > 7036 && rarityRoll <= 9196)
             {
                 rarity = "rare";
             }
-            else if (rarityRoll > 95 && rarityRoll <= 99)
+            else if (rarityRoll > 9196 && rarityRoll <= 9604)
             {
                 rarity = "epic";
             }
-            else if (rarityRoll > 99)
+            else if (rarityRoll > 9604 && rarityRoll <= 9698)
             {
                 rarity = "legendary";
+            }
+            else if (rarityRoll > 9698 && rarityRoll <= 9847)
+            {
+                rarity = "gCommon";
+            }
+            else if (rarityRoll > 9847 && rarityRoll <= 9973)
+            {
+                rarity = "gRare";
+            }
+            else if (rarityRoll > 9973 && rarityRoll <= 9993)
+            {
+                rarity = "gEpic";
+            }
+            else if (rarityRoll > 9993)
+            {
+                rarity = "gLegendary";
             }
 
             return rarity;
         }
 
+        /*
+         * Function: RarityRoller
+         * Input: None
+         * Output: The rarity of the card, in string format
+         * Remarks: Is called in constructor, only if the previous four cards have not been rare or higher
+         */
         public string RarityRollerRigged()
         {
+            string rarity = "";
 
+            int rarityRoll = Globals.rnd.Next(0, 10001); // Next is inclusive lower bounds, exclusive upper bounds
+
+            if (rarityRoll <= 7671)
+            {
+                rarity = "rare";
+            }
+            else if (rarityRoll > 7671 && rarityRoll <= 9121)
+            {
+                rarity = "epic";
+            }
+            else if (rarityRoll > 9121 && rarityRoll <= 9455)
+            {
+                rarity = "legendary";
+            }
+            else if (rarityRoll > 9455 && rarityRoll <= 9905)
+            {
+                rarity = "gRare";
+            }
+            else if (rarityRoll > 9905 && rarityRoll <= 9974)
+            {
+                rarity = "gEpic";
+            }
+            else if (rarityRoll > 9974)
+            {
+                rarity = "gLegendary";
+            }
+
+            return rarity;
         }
 
         /*

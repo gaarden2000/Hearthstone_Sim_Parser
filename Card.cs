@@ -20,7 +20,7 @@ namespace Hearthstone_Sim_Parser
             rarity = Rarity;
 
             // if statement sets isNotCommon flag for purposes in CardPack
-            if (rarity.Equals("common"))
+            if (rarity.Equals("common") || rarity.Equals("gcommon"))
             {
                 isNotCommon = false;
             }
