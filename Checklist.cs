@@ -31,8 +31,8 @@ namespace Hearthstone_Sim_Parser
 
         public Checklist(string[] CSVArray)
         {
-            /// 4 arrays (based on rarity)
-            /// Init based on CSVarray
+            // 4 arrays (based on rarity)
+            // Init based on CSVarray
 
             int[] arraySizes = FindArraySizes(CSVArray);
 

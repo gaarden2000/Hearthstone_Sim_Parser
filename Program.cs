@@ -79,10 +79,13 @@ namespace Hearthstone_Sim_Parser
                             else
                             {
                                 Console.WriteLine("Exiting. Please check your card source file or set name for inconsistencies.");
+                                Console.ReadKey();
                                 Environment.Exit(0);
                             }
-                            
 
+
+                            
+                            // Mainly testing code, not meant for final use. Final write must happen with simulation line array as the original roller did
                             Console.WriteLine("Writing to file.");
                             Globals.WriteToCSV(CSVArray, Globals.HSCuratedPath); // The array is written to the file
 
